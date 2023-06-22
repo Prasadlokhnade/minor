@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/home';
+import Navbar from "./components/navbar/Navbar";
+import About from './pages/About';
+import Feedback from './pages/Feedback'
+import Prediction from './pages/Prediction';
+import Creat from './pages/creat'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <div className="App">
+    < div className="gradient__bg">
+      <Navbar />
+
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/feedback' element={<Feedback/>}/>
+        <Route path='/prediction' element={<Prediction/>}/>
+        <Route path='/creat' element={<Creat/>}/>
+
+      </Routes>
     </div>
-  );
-}
+  </div>
+);
 
 export default App;
